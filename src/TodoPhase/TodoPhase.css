@@ -1,0 +1,77 @@
+.todo-phase {
+  margin-bottom: 2rem;
+}
+
+.todo-phase_heading {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.todo-phase_heading--header {
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #333;
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+}
+
+.todo-phase_heading--number {
+    display: inline-block;
+    align-items: center;
+    background: #333;
+    color: white;
+    font-size: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 15px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+
+}
+
+.todo-phase__checkmark {
+  align-self: center;
+  transform : scale(2);
+}
+
+.todo-phase__item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.todo-phase__submit {
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  
+  
+  &:hover {
+      color: #fff;
+      background-color: #0b5ed7;
+      border-color: #0a58ca;
+  }
+
+}

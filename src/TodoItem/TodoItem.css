@@ -1,0 +1,118 @@
+
+.todo-item {
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+    vertical-align: middle;
+}
+
+.todo-item__input {
+    border: 1px solid lightgray;
+    border-radius: .25rem;
+    outline: none;
+    font-size: 20px;
+    color: #333;
+    width: 40%;
+    background: none;
+    cursor: pointer;
+}
+
+.todo-item__button {
+    border: 1px solid lightgray;
+    border-radius: .25rem;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    background: none;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+}
+
+
+.todo-item__list-item{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+
+.checkbox-container {
+    display: flex;
+    gap: 1rem;
+    align-items: top;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    inline-size: 150px;
+    overflow-wrap: break-word;
+}
+
+.checkbox-container input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  } 
+
+ .checkbox-container input[type=button] {
+    padding: 0.5rem 1rem;
+ } 
+
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  
+  .checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .checkbox-container input[type=text] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
