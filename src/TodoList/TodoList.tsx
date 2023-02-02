@@ -15,11 +15,15 @@ function TodoList () {
   const [allPhasesCompleted, setAllPhasesCompleted] = useState<boolean>(false)
 
   const handleIsEditable = (phaseId: number) => {
-    setPhases(phases.map(phase => phase.phaseId === phaseId + 1 ? { ...phase, isEditable: true } : phase))
+    const copyPhases = [...phases]
+    copyPhases.find(phase => phase.phaseId === phaseId + 1)!.isEditable = true
+    setPhases(copyPhases)
   }
 
   const handlePhaseChange = (phaseName: string, newBoolean: boolean) => {
-    setPhases(phases.map(phase => phase.phaseName === phaseName ? { ...phase, isPhaseCompleted: newBoolean } : phase))
+    const copyPhases = [...phases]
+    copyPhases.find(phase => phase.phaseName === phaseName)!.isPhaseCompleted = newBoolean
+    setPhases(copyPhases)
   }
 
   useEffect(() => {
@@ -29,7 +33,7 @@ function TodoList () {
     } else {
       setAllPhasesCompleted(false)
     }
-  }, [phases, setPhases])
+  }, [phases, setPhases, allPhasesCompleted])
 
   return (
     <div>
