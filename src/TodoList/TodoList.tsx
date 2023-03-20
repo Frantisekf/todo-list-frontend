@@ -15,9 +15,24 @@ function TodoList () {
   const [allPhasesCompleted, setAllPhasesCompleted] = useState<boolean>(false)
 
   const handleIsEditable = (phaseId: number) => {
-    const copyPhases = [...phases]
-    copyPhases.find(phase => phase.phaseId === phaseId + 1)!.isEditable = true
-    setPhases(copyPhases)
+    const updatedPhases = [...phases]
+    const phaseIndex = updatedPhases.findIndex(phase => phase.phaseId === phaseId)
+    if (phaseIndex >= 0) {
+      const prevPhase = updatedPhases[phaseIndex - 1]
+      const currentPhase = updatedPhases[phaseIndex]
+      if (prevPhase && prevPhase.isPhaseCompleted) {
+        const nextPhase = updatedPhases[phaseIndex + 1]
+        if (nextPhase) {
+          nextPhase.isEditable = !nextPhase.isEditable
+        }
+      } else if (currentPhase) {
+        const nextPhase = updatedPhases[phaseIndex + 1]
+        if (nextPhase) {
+          nextPhase.isEditable = !nextPhase.isEditable
+        }
+      }
+    }
+    setPhases(updatedPhases)
   }
 
   const handlePhaseChange = (phaseName: string, newBoolean: boolean) => {

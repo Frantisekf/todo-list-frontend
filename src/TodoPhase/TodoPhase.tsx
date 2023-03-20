@@ -80,7 +80,7 @@ const TodoPhase: React.FC<ToDoPhase> = ({ todosFromStorage, isPhaseCompleted, ph
           event.target[0].value = ''
         }}>
         <div className="todo-phase__item">
-            <input type="text" placeholder="type here..." defaultValue="" className="todo-item__input" disabled={!isEditable}/>
+            <input type="text" placeholder="type here..." defaultValue="" className={ isEditable ? 'todo-item__input' : 'disabled'} disabled={!isEditable}/>
             <button type="submit" className="todo-phase__submit" disabled={!isEditable}>Add Todo</button >
         </div>
       </form>

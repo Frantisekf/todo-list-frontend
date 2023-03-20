@@ -1,1 +1,1 @@
-export const USELESS_API_URL = 'https://uselessfacts.jsph.pl/random.json?language=en';
+export const USELESS_API_URL = 'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en';
